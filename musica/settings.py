@@ -25,7 +25,7 @@ SECRET_KEY = '_qj@yk5ommk^ht-2ne9(i-dncihs4^zkbgep(gc(%g3(gp&zk*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [repositorioproyecto12.heroku.com]
 
 
 # Application definition
@@ -134,8 +134,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL= '/vernota'
 LOGOUT_REDIRECT_URL= '/login'
