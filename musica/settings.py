@@ -78,10 +78,22 @@ WSGI_APPLICATION = 'musica.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd8i9jenem6t4g7',
+        'USER': 'bgpnjnphhnwuow',
+        'PASSWORD': 'da562c8ecfe3df6969c10c0680feb390220bad4accd0c53f52ff755eca96e7fd',
+        'HOST': 'ec2-23-21-156-171.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
+
+##DATABASES = {
+  ##  'default': {
+    ##    'ENGINE': 'django.db.backends.sqlite3',
+      ##  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+   ## }
+##}
 
 
 # Password validation
