@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Nota</title>
+</head>
+<body bgcolor="#f0ffff">
+        <h2> Ver Notas Del Estudiante</h2>
+        <table border="2">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Nota 1</td>
+                    <td>Nota2 </td>
+                    <td>Nota 3</td>
+                    <td>Nota 4</td>
+                    <td>Asigantura</td>
+                    <td>Profesor</td>
+                    {% if perms.clasemusica.change_notas %}
+                    <td>Editar</td>
+                    {% endif %}
+
+                    {% if perms.clasemusica.del_notas %}
+                    <td>Eliminar</td>
+                    {% endif %}
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for notas in object_list %}
+                      <tr>
+                          <td>{{notas.id}}</td>
+                          <td>{{notas.nota1}}</td>
+                          <td>{{notas.nota2}}</td>
+                          <td>{{notas.nota3}}</td>
+                          <td>{{notas.nota4}}</td>
+                          <td>{{notas.get_asignatura_display}}</td>
+                          <td>{{notas.get_docente_display}}</td>
+                          {% if perms.clasemusica.change_notas %}
+                          <td><input type="button" onclick="location.href='/editarnota/{{ notas.id }}'" value="Editar"></td>
+                          {% endif %}
+
+                          {% if perms.clasemusica.del_notas %}
+                          <td><input type="reset" onclick="location.href='/eliminarnota/{{ notas.id }}'" value="Eliminar"></td>
+                          {% endif %}
+                      </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% if perms.clasemusica.change_notas %}
+<input type="button" onclick="location.href='/insertarnota' "value="Agregar Nota">
+{% endif %}
+<input type="button" onclick="location.href='/login' "value="Cerrar sesion">
+</body>
+</html>
+{% endblock %}

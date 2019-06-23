@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Nota</title>
+</head>
+<body bgcolor="#7fffd4">
+    <h2>Desea Eliminar Esta Nota Del Registro</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Si" >
+        <input type="button" onclick="location.href='/vernota'" value="No" >
+
+    </form>
+</body>
+</html>
+{% endblock %}

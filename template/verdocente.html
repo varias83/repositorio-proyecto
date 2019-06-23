@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ver docente</title>
+</head>
+<body bgcolor="#7fffd4">
+       <h2> Ver Docente</h2>
+        <table border="2">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Profesion</td>
+                    <td>Estudiante</td>
+                </tr>
+            </thead>
+
+           <tbody>
+                {% for profe in object_list %}
+                      <tr>
+                          <td>{{profe.id}}</td>
+                          <td>{{profe.get_Profesion_display}}</td>
+                          <td>{{profe.get_Estudiante_display}}</td>
+                      </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+<input type="button" onclick="location.href='/agregardocente' "value="Agregar Docente">
+</body>
+</html>

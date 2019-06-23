@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Asignatura</title>
+</head>
+<body bgcolor="#7fffd4">
+<h2> Ver Asignatura</h2>
+        <table border="2">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Instrumento</td>
+                    <td>Estudiante</td>
+                </tr>
+            </thead>
+
+           <tbody>
+                {% for asig in object_list %}
+                      <tr>
+                          <td>{{asig.id}}</td>
+                          <td>{{asig.get_Instrumento_display}}</td>
+                          <td>{{asig.get_Estudiante_display}}</td>
+                      </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+<input type="button" onclick="location.href='/agregarasignatura' "value="Agregar asignatura">
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Perfil</title>
+</head>
+<body bgcolor="#7fffd4">
+<h2> Ver Perfil</h2>
+        <table border="2">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Genero</td>
+                    <td>Documento</td>
+                    <td>Telefono</td>
+                    <td>FechaDeNacimiento</td>
+                    <td>User</td>
+                </tr>
+            </thead>
+
+           <tbody>
+                {% for per in object_list %}
+                      <tr>
+                          <td>{{per.id}}</td>
+                          <td>{{per.get_Genero_display}}</td>
+                          <td>{{per.get_Documento_display}}</td>
+                          <td>{{per.get_Telefono_display}}</td>
+                          <td>{{per.get_FechaDeNacimiento_display}}</td>
+                          <td>{{per.get_User_display}}</td>
+                      </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+<input type="button" onclick="location.href='/agregarperfil' "value="Agregar perfil">
+</body>
+</html>

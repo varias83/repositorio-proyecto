@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Estudiante</title>
+</head>
+<body bgcolor="#7fffd4">
+    <h2> Ver Estudiante</h2>
+        <table border="2">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>User</td>
+                    <td>Observador</td>
+                </tr>
+            </thead>
+
+           <tbody>
+                {% for estu in object_list %}
+                      <tr>
+                          <td>{{estu.id}}</td>
+                          <td>{{estu.get_User_display}}</td>
+                          <td>{{estu.get_Observador_display}}</td>
+                      </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+<input type="button" onclick="location.href='/agregarestudiante' "value="Agregar Estudiante">
+</body>
+</html>
