@@ -25,7 +25,7 @@ SECRET_KEY = '_qj@yk5ommk^ht-2ne9(i-dncihs4^zkbgep(gc(%g3(gp&zk*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [repositorioproyecto12.heroku.com]
+ALLOWED_HOSTS = ['repositorioproyecto12.herokuapp.com']
 
 
 # Application definition
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'whitenoise.storage.CompressedStaticFilesStorage',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'musica.urls'
@@ -140,8 +140,10 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL= '/vernota'
 LOGOUT_REDIRECT_URL= '/login'
 
+"""
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+"""
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
