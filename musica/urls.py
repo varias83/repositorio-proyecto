@@ -23,6 +23,7 @@ from clasemusica.views import Verestudiante, Agregarestudiante
 from clasemusica.views import Verasignatura, Agregarasignatura
 from clasemusica.views import Agregarperfil, Verperfil
 from django.conf.urls.static import static
+from clasemusica import settings
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')),
