@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['repositorioproyecto12.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    ##'flat',
     'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'clasemusica'
+    'clasemusica',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-co'
 
-TIME_ZONE = 'america/bogota'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
@@ -135,15 +134,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL= '/vernota'
-LOGOUT_REDIRECT_URL= '/login'
+STATIC_URL = '/static/'
 
 """
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 """
+
+LOGIN_REDIRECT_URL= '/vernota'
+LOGOUT_REDIRECT_URL= '/login'
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
