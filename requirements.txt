@@ -1,4 +1,4 @@
-Django==2.2
+Django==2.2.21
 django-flat-theme==1.1.4
 django-grappelli==2.12.3
 psycopg2==2.8.2
